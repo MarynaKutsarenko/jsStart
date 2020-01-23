@@ -7,5 +7,5 @@ let money,
 
   
 
-alert('My first projeckt');
+alert('My first project');
 console.log('Hello my teacher');
