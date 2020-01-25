@@ -1,6 +1,6 @@
 let money = 1200,
     income = ' подработка ',
-    addExpenses = 'тренажерка квартира коммуналка интернет',
+    addExpenses = 'тренажерка, квартира, коммуналка, интернет',
     deposit = true,
     mission = 6000,
     period = 6,
@@ -10,10 +10,10 @@ let money = 1200,
   console.log(typeof income);
   console.log(typeof deposit);
   console.log(addExpenses.length);
-  console.log('Период равен (period) месяцев : ' , period );
-  console.log('mission : ' , mission);
+  console.log('Период равен (6) месяцев ');
+  console.log('Цель заработать (6000 долларов)');
   console.log(addExpenses.toLocaleLowerCase());
-  console.log(addExpenses.split(' '));
+  console.log(addExpenses.split(', '));
   console.log(budgetDay);
 
 
