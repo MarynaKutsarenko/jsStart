@@ -10,8 +10,8 @@ let money = 1200,
   console.log(typeof income);
   console.log(typeof deposit);
   console.log(addExpenses.length);
-  console.log('Период равен (6) месяцев ');
-  console.log('Цель заработать (6000 долларов)');
+  console.log('Период равен ' + period + ' месяцев ');
+  console.log('Цель заработать ' + mission + ' долларов');
   console.log(addExpenses.toLocaleLowerCase());
   console.log(addExpenses.split(', '));
   console.log(budgetDay);
