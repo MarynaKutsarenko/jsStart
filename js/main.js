@@ -3,11 +3,11 @@
 let num = 266219,
     result = [],
     power,
-    arr = (num).toString().split('');
+    arr = num.toString().split('');
 
     for (let i = 0; i < arr.length; i++){
         result.push(parseInt(arr[i]));   
-    };
+    }
 
     let mult = result.reduce(function (total, item) {
       return total * item;
@@ -15,11 +15,11 @@ let num = 266219,
 
     power = (mult ** 3);
 
-    function mat() {
+    function mat(power) {
       let cut = (power.toString().substring(0, 2));
       alert(cut);
     }
-    mat()
+    mat(power);
 
 console.log(power);
 console.log(arr);
