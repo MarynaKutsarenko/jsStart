@@ -6,7 +6,7 @@ const money = +prompt('Ваш месячный доход?'), // money month inc
       addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую', 'тренажерка, квартира, интернет') , // regular exppenses per month
       mission = 6000; //purpose to accumulate for a period 
 
-function expenses() {  // ask qwestions to users and return answers
+function expenses() {  /* The function requests interactively information about  name and cost of a single required expense.@returns {{questionCost: number, questionSpending: string}}*/
   const questionSpending = prompt('Введите обязательную статью расходов!', ' квартира'), 
         questionCost = +prompt('Во сколько это обойдется?', '4000');
   return{
