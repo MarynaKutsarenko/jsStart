@@ -25,7 +25,7 @@ let budgetMonth = money - (resalt1.questionCost + resalt2.questionCost),
 
 
 
-  switch (budgetDay) {
+  switch (true) {
     case  (budgetDay > 1200) :
     case  (budgetDay = 1200) :
       console.log('У вас высокий уровень дохода');
@@ -41,7 +41,6 @@ let budgetMonth = money - (resalt1.questionCost + resalt2.questionCost),
     default: console.log('Не правильно работает');
   }
 
-  
   console.log(money);
   console.log(depositResalt);
   console.log(typeof income);
