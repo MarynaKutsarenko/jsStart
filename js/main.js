@@ -7,17 +7,17 @@ const money = +prompt('Ваш месячный доход?'), // money month inc
       mission = 6000; //purpose to accumulate for a period 
 
  /** The function requests interactively information about  name and cost of a single required expense.@returns {{questionCost: number, questionSpending: string}} */
-function expenses() { 
-  const questionSpending = prompt('Введите обязательную статью расходов!', ' квартира'), 
-        questionCost = +prompt('Во сколько это обойдется?', '4000');
+function getRequiredExpense(defaultName = ' квартира' , defaultExpense = '4000') { 
+  const questionSpending = prompt('Введите обязательную статью расходов!'), 
+        questionCost = +prompt('Во сколько это обойдется?');
   return{
     questionSpending: questionSpending,
     questionCost: questionCost
   };
 }
 // We have 2 required expenses which are entered by user
-const requiredExpense1 = expenses(), 
-      requiredExpense2 = expenses(); 
+const requiredExpense1 = getRequiredExpense(), 
+      requiredExpense2 = getRequiredExpense(); 
 
 const budgetMonth = money - (requiredExpense1.questionCost + requiredExpense2.questionCost),
       budgetDay = (budgetMonth / 30),
