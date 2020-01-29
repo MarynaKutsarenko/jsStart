@@ -22,41 +22,32 @@ const requiredExpense1 = getRequiredExpense(),
 // The function requests interactively information about month necessary expenses 
 function getExpensesMonth( expenses1, expenses2) {
   const expensesMonth = (expenses1 + expenses2);
-    return {
-      expensesMonth: expensesMonth
-    };
-};
+    return expensesMonth;
+}
 // We have required month necessary expenses
 const expensesMonth = getExpensesMonth(requiredExpense1.questionCost , requiredExpense2.questionCost);
 
 // The function requests interactively information about month accumulate
-function getAccumulatedMonth(total, expenses1, expenses2) {
-  const accumulatedMonth = (total - (expenses1 + expenses2));
-    return{
-      accumulatedMonth: accumulatedMonth
-    };
+function getAccumulatedMonth(total, expenses) {
+  const accumulatedMonth = (total - expenses);
+    return accumulatedMonth;
 }
 // We have required month accumulate
-const accumulatedMonth = getAccumulatedMonth(money, requiredExpense1.questionCost , requiredExpense2.questionCost);
+const accumulatedMonth = getAccumulatedMonth(money, expensesMonth);
 
 // The function requests interactively information about time which take to get accumulate money
-function getTargetMonth(period, total) {
-  const targetMonth = (period / total);
-    return{
-      targetMonth: targetMonth
-    };
+function getTargetMonth(sum, total) {
+  const targetMonth = (sum / total);
+    return targetMonth;
 }
-// We have required save money per period
+// We have required save up money per period
 const targetMonth = getTargetMonth(mission, accumulatedMonth);
-console.log(targetMonth );
 
-
-/*const budgetDay = (budgetMonth / 30),
-      period = (mission / budgetMonth);
-*/
+//calculate the daily budget based on monthly savings
+let budgetDay = accumulatedMonth / 30 ;
 
 /** The function requests interactively information about condition design with budgetDay*/
-function name(params) {
+const getStatusIncome = function () {
   if (budgetDay >= 1200){  
     console.log('У вас высокий уровень дохода');
   } else if (budgetDay >= 600 && budgetDay < 1200){
@@ -66,15 +57,18 @@ function name(params) {
   } else {
     console.log('Что то пошло не так');
   }
-}
+};
+getStatusIncome ();
 
-console.log(money);
-console.log(typeof income);
-console.log(!!deposit);
-console.log(addExpenses.length);
-console.log('Цель заработать ' + mission + ' долларов');
-console.log(addExpenses.toLocaleLowerCase());
+// The function show type of data
+const shoeTypeOf = function (data) {
+  console.log(typeof(data));
+};
+
+shoeTypeOf(money);
+shoeTypeOf(income);
+shoeTypeOf(deposit);
+
 console.log(addExpenses.split(', '));
-console.log(budgetMonth);
-console.log(Math.floor(budgetDay));
-console.log(Math.ceil(period));
+console.log(targetMonth);
+console.log();
