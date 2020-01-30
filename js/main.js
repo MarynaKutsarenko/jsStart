@@ -1,10 +1,10 @@
 'use strict';
 
-const money = +prompt('Ваш месячный доход?', '1000'), // money of month income 
-      deposit = confirm('Есть ли у вас депозит в банке?'), //credit story in the bank
-      income = ' подработка ', //extra money
-      addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую', 'тренажерка, квартира, интернет') , // regular exppenses per month
-      mission = 6000; //purpose to accumulate for a period 
+const money = +prompt('Ваш месячный доход?', '1000'),       // money of month income 
+      deposit = confirm('Есть ли у вас депозит в банке?'),  //credit story in the bank
+      income = ' подработка ',                              //extra money
+      addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую', 'тренажерка, квартира, интернет') ,          // regular exppenses per month
+      mission = 6000;                                       //purpose to accumulate for a period 
 
  /** The function requests interactively information about  name and cost of a single required expense.@returns {{questionCost: number, questionSpending: string}} */
 function getRequiredExpense(defaultName = ' квартира' , defaultExpense = '4000') { 
@@ -21,24 +21,21 @@ const requiredExpense1 = getRequiredExpense(),
 
 // The function requests interactively information about month necessary expenses 
 function getExpensesMonth( expenses1, expenses2) {
-  const expensesMonth = (expenses1 + expenses2);
-    return expensesMonth;
+  return expenses1 + expenses2;
 }
 // We have required month necessary expenses
 const expensesMonth = getExpensesMonth(requiredExpense1.questionCost , requiredExpense2.questionCost);
 
 // The function requests interactively information about month accumulate
 function getAccumulatedMonth(total, expenses) {
-  const accumulatedMonth = (total - expenses);
-    return accumulatedMonth;
+  return total - expenses;
 }
 // We have required month accumulate
 const accumulatedMonth = getAccumulatedMonth(money, expensesMonth);
 
 // The function requests interactively information about time which take to get accumulate money
 function getTargetMonth(sum, total) {
-  const targetMonth = (sum / total);
-    return targetMonth;
+  return sum / total;
 }
 // We have required save up money per period
 const targetMonth = getTargetMonth(mission, accumulatedMonth);
@@ -46,7 +43,8 @@ const targetMonth = getTargetMonth(mission, accumulatedMonth);
 //calculate the daily budget based on monthly savings
 const budgetDay = accumulatedMonth / 30 ;
 
-/** The function requests interactively information about condition design with budgetDay*/
+/** The function requests interactively 
+ * information about condition design with budgetDay*/
 const getStatusIncome = function () {
   if (budgetDay >= 1200){  
     console.log('У вас высокий уровень дохода');
@@ -70,11 +68,11 @@ showTypeOf(income);
 showTypeOf(deposit);
 
 
-console.log(money);
-console.log(income);
-console.log(deposit);
-console.log(budgetDay);
-console.log(addExpenses.split(', ') + ' ' + ' ежемесячные расходы ');
-console.log(addExpenses.length);
-console.log('Период равен' + ' ' + accumulatedMonth + ' ' + 'месяцев' + ' ' + 'Цель заработать ' + mission + ' ' +'рублей/долларов/гривен/юани');
-console.log(parseInt(targetMonth) + ' ' + 'Период за который пользователь накопит нужную сумму');
+console.log('Месячный доход :', money) ;
+console.log('Дополнительный доход :',income);
+console.log('Наличие кредита :',deposit);
+console.log('Бюджет на день :', parseInt(budgetDay));
+console.log('Постоянные расходы :', addExpenses.toLowerCase().split(', '));
+console.log('Длина массива <обязательные расходы>:', addExpenses.length);
+console.log('Накопления за месяц:', accumulatedMonth);
+console.log('Период за который будут накоплена нужная сумма:', parseInt(targetMonth));
