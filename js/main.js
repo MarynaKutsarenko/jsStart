@@ -7,7 +7,7 @@ const money = +prompt('Ваш месячный доход?', '1000'),       // m
       mission = 6000;                                       //purpose to accumulate for a period 
 
  /** The function requests interactively information about  name and cost of a single required expense.@returns {{questionCost: number, questionSpending: string}} */
-function getRequiredExpense(defaultName = ' квартира' , defaultExpense = '4000') { 
+function getRequiredExpense() { 
   const questionSpending = prompt('Введите обязательную статью расходов!'), 
         questionCost = +prompt('Во сколько это обойдется?');
   return{
@@ -33,7 +33,7 @@ function getAccumulatedMonth(total, expenses) {
 // We have required month accumulate
 const accumulatedMonth = getAccumulatedMonth(money, expensesMonth);
 
-// The function requests interactively information about time which take to get accumulate money
+// The function required save up money per period
 function getTargetMonth(sum, total) {
   return sum / total;
 }
@@ -75,4 +75,4 @@ console.log('Бюджет на день :', parseInt(budgetDay));
 console.log('Постоянные расходы :', addExpenses.toLowerCase().split(', '));
 console.log('Длина массива <обязательные расходы>:', addExpenses.length);
 console.log('Накопления за месяц:', accumulatedMonth);
-console.log('Период за который будут накоплена нужная сумма:', parseInt(targetMonth));
+console.log('Период за который будут накоплена нужная сумма:', Math.ceil(targetMonth));
