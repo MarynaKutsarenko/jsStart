@@ -11,7 +11,7 @@ const deposit = confirm('Есть ли у вас депозит в банке?')
       addExpenses = prompt('Перечислите возможные расходы через запятую'), // regular exppenses per month
       mission = 6000;                                               //purpose to accumulate for a period 
 
-// The function request money of month income from user
+// The function request month income from user
 let start = function () {
   do {
     money = +prompt('Ваш месячный доход?');
