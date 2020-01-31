@@ -9,6 +9,7 @@ let money;       // money of month income
 const deposit = confirm('Есть ли у вас депозит в банке?'),            //credit story in the bank
       income = ' подработка ',                                        //extra money
       addExpenses = prompt('Перечислите возможные расходы через запятую'), // regular exppenses per month
+      addExpensesList = addExpenses.toLowerCase().split(', '),
       mission = 6000;                                               //purpose to accumulate for a period 
 
 // The function request month income from user
@@ -90,7 +91,7 @@ console.log('Дополнительный доход :', income);
 console.log('Наличие кредита :', deposit);
 console.log('Бюджет на день :', parseInt(budgetDay));
 console.log('Постоянные расходы :', addExpenses.toLowerCase().split(', '));
-console.log('Длина массива <обязательные расходы>:', addExpenses.length);
+console.log('Длина массива <обязательные расходы>:', addExpensesList.length);
 console.log('Накопления за месяц:', accumulatedMonth);
 
 if (targetMonth <= 0) {
